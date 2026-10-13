@@ -2,9 +2,9 @@
 
 Research project website for **Recursive Self-Improvement of Shared Executable Stacks for Zero-Shot Long-Horizon Robot Manipulation**.
 
-- Website: https://lfrlll.github.io/Recursia/
-- Website repository: https://github.com/lfrlll/Recursia
-- Robot implementation: https://github.com/cyzhuoda/recursia-fr3
+- Website: https://cocacola-lab.github.io/Recursia-website/
+- Website repository: https://github.com/cocacola-lab/Recursia-website
+- Robot implementation: https://github.com/cocacola-lab/Recursia
 - Original page source: https://github.com/phosphene7/Recursia-Page
 
 This version follows the supplied updated manuscript (`Recursia/main.tex` and its 23-page `Recursia/build/main.pdf`) and includes three selected physical robot demonstrations. The repository contains the website, manuscript figures, downloadable paper, and selected media. The robot implementation is linked separately. Placeholder manuscript authors and affiliations are not copied onto the website.
@@ -53,7 +53,7 @@ The original video bundle, manuscript source folder, ZIP files, local backups, a
 
 ## GitHub Pages deployment
 
-GitHub Pages publishes branch `main`, folder `/` (root). Pushes to `main` update the website automatically. `.nojekyll` preserves the buildless static site. All local asset URLs are relative and work under `/Recursia/`.
+GitHub Pages publishes branch `main`, folder `/` (root). Pushes to `main` update the website automatically. `.nojekyll` preserves the buildless static site. All local asset URLs are relative and work under `/Recursia-website/`.
 
 To preview locally:
 
