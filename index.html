@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Recursia improves a shared executable stack of tools, skills, handoffs, and verifiers for zero-shot long-horizon robot manipulation.">
+  <meta property="og:title" content="Recursia · Learning to Compose">
+  <meta property="og:description" content="Recursive self-improvement of shared executable stacks for zero-shot long-horizon robot manipulation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lfrlll.github.io/Recursia/">
+  <link rel="canonical" href="https://lfrlll.github.io/Recursia/">
+  <title>Recursia · Learning to Compose</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="site-config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M25 10A11 11 0 1 0 27 20M25 10V3M25 10H18"/></svg>Recursia<span class="brand-dot">.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#demos">Task demos</a><a href="#results">Results</a>
+        <a class="nav-lab" href="https://github.com/cocacola-lab" target="_blank" rel="noopener noreferrer">CoLa Lab <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="eyebrow"><span class="status-dot"></span> EMBODIED RECURSIVE SELF-IMPROVEMENT</div>
+      <h1 id="hero-title">Recursia<span>.</span></h1>
+      <p class="hero-kicker">Learning to Compose</p>
+      <h2 class="paper-title">Recursive Self-Improvement of Shared Executable Stacks<br class="desktop-break"> for Zero-Shot Long-Horizon Robot Manipulation</h2>
+      <div id="authors" class="authors" hidden></div>
+      <a class="affiliation" href="https://github.com/cocacola-lab" target="_blank" rel="noopener noreferrer">CoLa Lab</a>
+      <p class="hero-description">Improve the shared stack. Freeze what works.<br>Compose it into unseen robot tasks.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#demos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>Explore task demos</a>
+        <a class="button secondary" href="Recursia.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H5v18h14V8Z M14 3v5h5 M8 13h8 M8 17h6"/></svg>Paper PDF</a>
+        <a class="button secondary" href="Recursia.pdf" download="Recursia.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>Download PDF</a>
+        <a id="code-link" class="button secondary" hidden target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-heading"><span>ONE SHARED EXECUTABLE STACK</span><span class="visual-note">Source-side improvement → frozen target execution</span></div>
+        <img src="shared-stack.webp" width="1484" height="254" alt="Four illustrated robot interfaces: motion termination, placement, grasp-to-transport handoff, and cross-frame identity verification.">
+        <div class="stack-labels"><span><i class="layer-dot blue"></i>Tools</span><span><i class="layer-dot green"></i>Skills</span><span><i class="layer-dot orange"></i>Handoffs</span><span><i class="layer-dot purple"></i>Verifiers</span></div>
+      </div>
+      <div class="hero-footnote"><span>Learn from source failures</span><span>Validate shared repairs</span><span>Transfer without target repair</span></div>
+    </section>
+
+    <section id="abstract" class="abstract-section">
+      <div class="section-shell abstract-grid">
+        <div><p class="section-index">01 / THE IDEA</p><h2>Skills work alone.<br> Can they work<br> <em>together?</em></h2></div>
+        <div class="abstract-copy"><p class="lead">A successful skill can leave the robot in a state that the next skill cannot use. Recursia improves the shared mechanisms that make composition possible.</p>
+          <h3>Abstract</h3>
+          <p>Skills that succeed in isolation can fail when composed into a long-horizon robot task. Their tools may lack a required capability or report completion before execution has finished, and one skill may leave a state from which the next cannot reliably start.</p>
+          <p>We introduce <strong>Recursia</strong>, a stack-aware, validation-gated recursive self-improvement framework for coding agents in zero-shot long-horizon robot manipulation. The agent improves a shared executable stack across tools, reusable skills with execution contracts, skill handoffs, and verification. Guided by source-side failure attribution, it generates missing tools or repairs shared components.</p>
+          <p>Candidates must pass generality checks, mechanism-level tests, and paired regression tests before acceptance. The resulting stack is frozen and reused unchanged on target tasks through declarative adapters: a repair learned from one source failure becomes executable functionality available to multiple skills and unseen compositions.</p>
+          <span class="small-note">Adapted from the supplied manuscript.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="section-shell section-space">
+      <div class="section-heading"><div><p class="section-index">02 / THE METHOD</p><h2>A repair that travels<br>with every composition.</h2></div><p>Experience is retained as shared executable functionality. Each accepted change becomes part of a versioned stack.</p></div>
+      <figure class="framework-figure"><button class="figure-button" type="button" aria-label="Expand Recursia framework figure"><img src="framework.webp" width="1513" height="693" loading="lazy" alt="Recursia framework: an executor diagnoses source failures, a proposer modifies the shared stack, and a verifier gates acceptance; the frozen stack is then composed on zero-shot target tasks."><span class="expand-hint" aria-hidden="true">View larger ↗</span></button><figcaption><span>Figure 1</span> Source failures guide shared-stack improvement; accepted versions are frozen for target execution.</figcaption></figure>
+      <div class="method-flow" aria-label="Improvement process"><div><span>01</span><h3>Execute & attribute</h3><p>Run a source task and identify the first supported execution failure.</p></div><div><span>02</span><h3>Propose a shared repair</h3><p>Add a missing tool or update a tool, skill contract, handoff, or verifier.</p></div><div><span>03</span><h3>Validate & retain</h3><p>Check generality, test the mechanism, and compare paired outcomes and regressions.</p></div><div><span>04</span><h3>Freeze & compose</h3><p>Reuse accepted code on unseen target compositions without persistent repair.</p></div></div>
+      <div class="principle"><span class="principle-symbol" aria-hidden="true">↔</span><p><strong>Completion is not readiness.</strong> A predecessor's achieved goal does not guarantee its successor's prerequisites. Recursia makes that boundary explicit.</p></div>
+    </section>
+
+    <section id="demos" class="demos-section section-space">
+      <div class="section-shell">
+        <div class="section-heading"><div><p class="section-index">03 / TASK DEMONSTRATIONS</p><h2>Familiar skills.<br>New compositions.</h2></div><p>Three physical target tasks on a Franka FR3 with Franka Hand. Source knowledge stays frozen throughout evaluation.</p></div>
+        <div class="demo-grid">
+          <article class="demo-card" data-task="task1">
+            <div class="media-slot">
+              <video controls playsinline preload="none" poster="assets/posters/T1.jpg" src="assets/videos/T1.mp4" width="640" height="480" aria-label="Shared basket real-robot demonstration" aria-describedby="recording-note">
+                Your browser does not support embedded video. <a href="assets/videos/T1.mp4">Open the Shared basket video</a>.
+              </video>
+              <div class="media-error" role="status" hidden>Unable to play here. <a href="assets/videos/T1.mp4" target="_blank" rel="noopener noreferrer">Open the video directly ↗</a></div>
+            </div>
+            <div class="demo-copy">
+              <div class="task-meta"><span>TASK 01</span><span>Shared destination</span></div>
+              <h3>Shared basket</h3>
+              <p>Place the mug and milk carton in the same basket.</p>
+              <div class="video-meta"><span><span data-video-duration>1:01.3</span> · Original speed</span><a class="open-video" href="assets/videos/T1.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Shared basket video">Open video ↗</a></div>
+              <div class="task-sequence"><span>Mug → basket</span><span aria-hidden="true">+</span><span>Milk → basket</span></div>
+            </div>
+          </article>
+          <article class="demo-card" data-task="task2">
+            <div class="media-slot">
+              <video controls playsinline preload="none" poster="assets/posters/T2.jpg" src="assets/videos/T2.mp4" width="640" height="480" aria-label="Reassigned plates real-robot demonstration" aria-describedby="recording-note">
+                Your browser does not support embedded video. <a href="assets/videos/T2.mp4">Open the Reassigned plates video</a>.
+              </video>
+              <div class="media-error" role="status" hidden>Unable to play here. <a href="assets/videos/T2.mp4" target="_blank" rel="noopener noreferrer">Open the video directly ↗</a></div>
+            </div>
+            <div class="demo-copy">
+              <div class="task-meta"><span>TASK 02</span><span>Reassigned goals</span></div>
+              <h3>Reassigned plates</h3>
+              <p>Place the blue mug on the left plate and the white mug on the right plate, reversing the source assignments.</p>
+              <div class="video-meta"><span><span data-video-duration>0:54.5</span> · Original speed</span><a class="open-video" href="assets/videos/T2.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Reassigned plates video">Open video ↗</a></div>
+              <div class="task-sequence"><span>Blue → left</span><span aria-hidden="true">+</span><span>White → right</span></div>
+            </div>
+          </article>
+          <article class="demo-card" data-task="task3">
+            <div class="media-slot">
+              <video controls playsinline preload="none" poster="assets/posters/T3.jpg" src="assets/videos/T3.mp4" width="640" height="480" aria-label="Bowl–mug dependency real-robot demonstration" aria-describedby="recording-note">
+                Your browser does not support embedded video. <a href="assets/videos/T3.mp4">Open the Bowl–mug dependency video</a>.
+              </video>
+              <div class="media-error" role="status" hidden>Unable to play here. <a href="assets/videos/T3.mp4" target="_blank" rel="noopener noreferrer">Open the video directly ↗</a></div>
+            </div>
+            <div class="demo-copy">
+              <div class="task-meta"><span>TASK 03</span><span>Dependent subgoals</span></div>
+              <h3>Bowl–mug dependency</h3>
+              <p>First place the bowl on the plate, then place the mug in the relocated bowl.</p>
+              <div class="video-meta"><span><span data-video-duration>0:52.1</span> · Original speed</span><a class="open-video" href="assets/videos/T3.mp4" target="_blank" rel="noopener noreferrer" aria-label="Open Bowl–mug dependency video">Open video ↗</a></div>
+              <div class="task-sequence"><span>Bowl → plate</span><span aria-hidden="true">→</span><span>Mug → bowl</span></div>
+            </div>
+          </article>
+        </div>
+        <p id="recording-note" class="demos-note">Selected successful motion recordings at original speed. Each video includes all supplied motion segments in chronological order; unrecorded perception and model-wait intervals are omitted. Displayed durations are recorded motion time, not full trial wall-clock time.</p>
+      </div>
+    </section>
+
+    <section id="results" class="section-shell section-space results-section">
+      <div class="section-heading"><div><p class="section-index">04 / PRELIMINARY RESULTS</p><h2>From source experience<br>to physical composition.</h2></div><p>A first comparison with Skill Document Only (SD-only), which retains source experience in a natural-language skill document.</p></div>
+      <div class="results-grid"><div class="result-highlight"><span class="result-label">AVERAGE TARGET SUCCESS</span><div class="result-number">66.7<span>%</span></div><p>Recursia</p><div class="baseline-result">22.2% <span>SD-only</span></div><span class="small-note">3 tasks · 3 trials per task per method</span></div><div class="results-detail"><div class="table-scroll"><table><caption class="sr-only">Preliminary physical target-task success: three trials per task and method.</caption><thead><tr><th scope="col">Target task</th><th scope="col">SD-only</th><th scope="col">Recursia</th></tr></thead><tbody><tr><th scope="row">T1 · Shared basket</th><td>0.0%</td><td><strong>33.3%</strong></td></tr><tr><th scope="row">T2 · Reassigned plates</th><td>66.7%</td><td><strong>66.7%</strong></td></tr><tr><th scope="row">T3 · Bowl–mug dependency</th><td>0.0%</td><td><strong>100.0%</strong></td></tr><tr class="average-row"><th scope="row">Average</th><td>22.2%</td><td><strong>66.7%</strong></td></tr></tbody></table></div><p class="results-note">Preliminary results from Table 1 of the manuscript. Each target is evaluated three times per method, with success assessed manually. The small trial count limits broader conclusions; full benchmark results are pending.</p></div></div>
+      <div class="evaluation-strip"><span>EVALUATION SETTINGS</span><p>LIBERO-Pro Long <i></i> BEHAVIOR-1K <i></i> Franka FR3</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="section-shell footer-shell"><div><a class="brand" href="#">Recursia<span class="brand-dot">.</span></a><p>Learning to Compose</p></div><div><a href="https://github.com/cocacola-lab" target="_blank" rel="noopener noreferrer">CoLa Lab ↗</a><a href="#main">Back to top ↑</a></div></div></footer>
+  <dialog id="figure-dialog" aria-label="Recursia framework enlarged"><button class="dialog-close" type="button" aria-label="Close figure">Close ×</button><img src="framework.webp" alt="Enlarged Recursia framework overview."></dialog>
+</body>
+</html>

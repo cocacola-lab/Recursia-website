@@ -1,0 +1,38 @@
+{
+  "model": "Recursia",
+  "source_bundle": "recursia_fastest_success_20261012",
+  "playback": "Original speed; complete supplied recorded motion segments, concatenated chronologically; unrecorded perception and model-wait gaps omitted. Durations are not full trial wall-clock times.",
+  "selection": "Three target recordings match the three target task cards. Website assets are byte-identical to the supplied MP4 files.",
+  "videos": [
+    {
+      "task": "T1",
+      "file": "T1.mp4",
+      "duration_seconds": 61.266667,
+      "sha256": "39315c3bcf395aa78312b753f8fa8ad13673702f397a1c271b0ff83e578dfcdb",
+      "width": 640,
+      "height": 480,
+      "fps": 30,
+      "success_evidence": "user-provided final human results, model completion report, and sampled video review; automatic log remains false"
+    },
+    {
+      "task": "T2",
+      "file": "T2.mp4",
+      "duration_seconds": 54.533333,
+      "sha256": "413e6ef03b934e66a1e8512498a75fc2cf1cd3a5c322be2211ed02ce214c10d2",
+      "width": 640,
+      "height": 480,
+      "fps": 30,
+      "success_evidence": "automatic task success and sampled video review"
+    },
+    {
+      "task": "T3",
+      "file": "T3.mp4",
+      "duration_seconds": 52.133333,
+      "sha256": "e427e34b6b0ee6162fd4c5e54446384a7a783469521bdc701de62fd2dcf422f7",
+      "width": 640,
+      "height": 480,
+      "fps": 30,
+      "success_evidence": "user-provided final human results, model completion report, and sampled video review; automatic log remains false"
+    }
+  ]
+}
