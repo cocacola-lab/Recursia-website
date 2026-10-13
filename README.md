@@ -4,6 +4,7 @@ Research project website for **Recursive Self-Improvement of Shared Executable S
 
 - Website: https://lfrlll.github.io/Recursia/
 - Website repository: https://github.com/lfrlll/Recursia
+- Robot implementation: https://github.com/cyzhuoda/recursia-fr3
 - Original page source: https://github.com/phosphene7/Recursia-Page
 
 This version is based on the supplied local website and adds three selected physical robot demonstrations. The repository contains the website, figures, downloadable paper, and selected media. It does not contain the robot implementation. Authors are left blank, as in the supplied page.
