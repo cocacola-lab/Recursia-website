@@ -79,7 +79,36 @@
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); }));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { menu.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); } });
   const dialog = document.querySelector('#figure-dialog');
-  document.querySelector('.figure-button').addEventListener('click', () => dialog.showModal());
-  document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+  let figureTrigger = null;
+  document.querySelectorAll('.figure-button').forEach(link => {
+    link.addEventListener('click', event => {
+      // The image link remains usable when dialogs or JavaScript are unavailable.
+      if (!dialog || typeof dialog.showModal !== 'function' || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const source = link.querySelector('img');
+      const src = safeUrl(link.getAttribute('href'));
+      if (!source || !src) return;
+      event.preventDefault();
+      const image = dialog.querySelector('.dialog-image');
+      image.src = src;
+      image.alt = source.alt;
+      dialog.querySelector('#figure-dialog-title').textContent = link.dataset.figureTitle || 'Paper figure';
+      dialog.querySelector('.dialog-caption').textContent = link.closest('figure').querySelector('figcaption').textContent;
+      dialog.querySelector('.dialog-original').href = src;
+      figureTrigger = link;
+      dialog.showModal();
+      document.body.classList.add('figure-is-open');
+    });
+  });
+  if (dialog) {
+    dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const rect = dialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      document.body.classList.remove('figure-is-open');
+      if (figureTrigger) figureTrigger.focus({ preventScroll: true });
+    });
+  }
 })();

@@ -1,0 +1,88 @@
+{
+  "manuscript": "Recursia/main.tex",
+  "paper_source": "Recursia/build/main.pdf",
+  "paper_asset": "Recursia.pdf",
+  "paper_sha256": "9fb2542267d0e4c1979b3bc0bb164c514b5be3001d38972d021ea83bd556410c",
+  "figures": [
+    {
+      "figure": 4,
+      "source": "Recursia/figures/compositional_reliability.png",
+      "source_sha256": "156b2748ef99e6005da1f89bf2299eea14f384d09f0e6a195ed380afd257ff00",
+      "asset": "assets/figures/compositional-reliability.webp",
+      "asset_sha256": "95af5cec6b88bb0bb439b7e0e89531ec07a6565fefa326d1a86d72fc9435c7e2",
+      "width": 2194,
+      "height": 1954,
+      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+    },
+    {
+      "figure": 1,
+      "source": "Recursia/figures/framework.pdf",
+      "source_sha256": "f9d5265b59cbb3b28d99b95e8b6c48738633edbffdb2c1f1ba5205765cd525db",
+      "asset": "assets/figures/framework.webp",
+      "asset_sha256": "c95099fcdd383c2991589af5d75f8205e99b0ff16b09b07e4917335ae6181462",
+      "width": 2400,
+      "height": 1080,
+      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+    },
+    {
+      "figure": 5,
+      "source": "Recursia/figures/inference-strategies.png",
+      "source_sha256": "6b6208c5336e8dbe126193e44f29361f8c96647fd308b059805fb7aee20c32c2",
+      "asset": "assets/figures/inference-strategies.webp",
+      "asset_sha256": "63e21b9c067abad34dd12148ef0de23dceeb8240115099e2d2b002264c92b0b5",
+      "width": 2292,
+      "height": 749,
+      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+    },
+    {
+      "figure": 7,
+      "source": "Recursia/figures/recursia-transfer-scaling.pdf",
+      "source_sha256": "66cceb3326fb346ffce961cdbd3e37748dab39d307d2033d1a188618094a926e",
+      "asset": "assets/figures/transfer-scaling.webp",
+      "asset_sha256": "e7ff0143f0758da68948b9332614d154135b606fb39e4e2dff37bfbb40167b1a",
+      "width": 2400,
+      "height": 1034,
+      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+    },
+    {
+      "figure": 2,
+      "source": "Recursia/figures/stack.pdf",
+      "source_sha256": "068389162f846ea1781bc9bf4640ffa94adf05b4bb79440841b694316779ba2b",
+      "asset": "assets/figures/stack.webp",
+      "asset_sha256": "b06f983665da88dd2fb367829b93900b0041168140cdcf1b0ef74cffd887396e",
+      "width": 2400,
+      "height": 3230,
+      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+    },
+    {
+      "figure": null,
+      "source": "Recursia/figures/title-robot-composition.png",
+      "source_sha256": "70064db47fffe7ccc2357c7b798830e7a88282aaf048a78417ddf5dc0d85a83f",
+      "asset": "assets/figures/title-robot-composition.webp",
+      "asset_sha256": "06a8ff5b2f325c21aa0fb8c82f400aefabfc3222aa141e3faabe1501356b6d1a",
+      "width": 1254,
+      "height": 1254,
+      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+    },
+    {
+      "figure": 6,
+      "source": "Recursia/figures/validation_gates.png",
+      "source_sha256": "e6ebd319fbeadd418689c365e981c053f4ef15b7ac08c52e429b6490d47244e0",
+      "asset": "assets/figures/validation-gates.webp",
+      "asset_sha256": "2b511fbf76cbaf4d4c4c122a14357ffeb978441c42981fb22c994f94d04f33a7",
+      "width": 2194,
+      "height": 1684,
+      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+    },
+    {
+      "figure": 3,
+      "source": "Recursia/figures/zero-shot-transfer.pdf",
+      "source_sha256": "fe8c2a463906bdd76db940c36b3cedb3d1cc86b076a180bf0057ba10ad67e160",
+      "asset": "assets/figures/zero-shot-transfer.webp",
+      "asset_sha256": "e3e124ca416062f3c60196660c4b200c6c510c8125f805f32b394349abae52a2",
+      "width": 2400,
+      "height": 850,
+      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+    }
+  ]
+}

@@ -23,7 +23,7 @@
       <a class="brand" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M25 10A11 11 0 1 0 27 20M25 10V3M25 10H18"/></svg>Recursia<span class="brand-dot">.</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
       <nav id="navigation" aria-label="Main navigation">
-        <a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#demos">Task demos</a><a href="#results">Results</a>
+        <a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#results">Simulation</a><a href="#demos">Real robot</a><a href="#analysis">Analysis</a>
         <a class="nav-lab" href="https://github.com/cocacola-lab" target="_blank" rel="noopener noreferrer">CoLa Lab <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -31,22 +31,27 @@
   <main id="main">
     <section class="hero section-shell" aria-labelledby="hero-title">
       <div class="eyebrow"><span class="status-dot"></span> EMBODIED RECURSIVE SELF-IMPROVEMENT</div>
-      <h1 id="hero-title">Recursia<span>.</span></h1>
+      <div class="hero-title-lockup"><img class="hero-mark" src="assets/figures/title-robot-composition.webp" width="1254" height="1254" alt="Robot arm composing puzzle pieces"><h1 id="hero-title">Recursia<span>.</span></h1></div>
       <p class="hero-kicker">Learning to Compose</p>
       <h2 class="paper-title">Recursive Self-Improvement of Shared Executable Stacks<br class="desktop-break"> for Zero-Shot Long-Horizon Robot Manipulation</h2>
       <div id="authors" class="authors" hidden></div>
       <a class="affiliation" href="https://github.com/cocacola-lab" target="_blank" rel="noopener noreferrer">CoLa Lab</a>
-      <p class="hero-description">Improve the shared stack. Freeze what works.<br>Compose it into unseen robot tasks.</p>
+      <p class="draft-label">Current draft manuscript</p>
+      <p class="hero-description">Improve one shared executable stack. Validate each repair.<br>Reuse the frozen stack on unseen task compositions.</p>
       <div class="hero-actions">
         <a class="button primary" href="#demos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>Explore task demos</a>
-        <a class="button secondary" href="Recursia.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H5v18h14V8Z M14 3v5h5 M8 13h8 M8 17h6"/></svg>Paper PDF</a>
+        <a class="button secondary" href="Recursia.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H5v18h14V8Z M14 3v5h5 M8 13h8 M8 17h6"/></svg>Draft paper PDF</a>
         <a class="button secondary" href="Recursia.pdf" download="Recursia.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>Download PDF</a>
         <a id="code-link" class="button secondary" href="https://github.com/cyzhuoda/recursia-fr3" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </div>
       <div class="hero-visual">
         <div class="visual-heading"><span>ONE SHARED EXECUTABLE STACK</span><span class="visual-note">Source-side improvement → frozen target execution</span></div>
-        <img src="shared-stack.webp" width="1484" height="254" alt="Four illustrated robot interfaces: motion termination, placement, grasp-to-transport handoff, and cross-frame identity verification.">
-        <div class="stack-labels"><span><i class="layer-dot blue"></i>Tools</span><span><i class="layer-dot green"></i>Skills</span><span><i class="layer-dot orange"></i>Handoffs</span><span><i class="layer-dot purple"></i>Verifiers</span></div>
+        <div class="stack-overview" aria-label="The four shared stack layers">
+          <div><span class="stack-layer"><i class="layer-dot blue" aria-hidden="true"></i>Tools</span><p>Reusable perception,<br>planning & execution</p></div>
+          <div><span class="stack-layer"><i class="layer-dot green" aria-hidden="true"></i>Skills</span><p>Programs with observable<br>execution contracts</p></div>
+          <div><span class="stack-layer"><i class="layer-dot orange" aria-hidden="true"></i>Handoffs</span><p>Successor readiness<br>& preserved goals</p></div>
+          <div><span class="stack-layer"><i class="layer-dot purple" aria-hidden="true"></i>Verifiers</span><p>Object identity<br>& task relations</p></div>
+        </div>
       </div>
       <div class="hero-footnote"><span>Learn from source failures</span><span>Validate shared repairs</span><span>Transfer without target repair</span></div>
     </section>
@@ -54,26 +59,92 @@
     <section id="abstract" class="abstract-section">
       <div class="section-shell abstract-grid">
         <div><p class="section-index">01 / THE IDEA</p><h2>Skills work alone.<br> Can they work<br> <em>together?</em></h2></div>
-        <div class="abstract-copy"><p class="lead">A successful skill can leave the robot in a state that the next skill cannot use. Recursia improves the shared mechanisms that make composition possible.</p>
+        <div class="abstract-copy"><p class="lead">Long-horizon robot manipulation requires individually capable skills to compose into physically feasible sequences.</p>
           <h3>Abstract</h3>
-          <p>Skills that succeed in isolation can fail when composed into a long-horizon robot task. Their tools may lack a required capability or report completion before execution has finished, and one skill may leave a state from which the next cannot reliably start.</p>
-          <p>We introduce <strong>Recursia</strong>, a stack-aware, validation-gated recursive self-improvement framework for coding agents in zero-shot long-horizon robot manipulation. The agent improves a shared executable stack across tools, reusable skills with execution contracts, skill handoffs, and verification. Guided by source-side failure attribution, it generates missing tools or repairs shared components.</p>
-          <p>Candidates must pass generality checks, mechanism-level tests, and paired regression tests before acceptance. The resulting stack is frozen and reused unchanged on target tasks through declarative adapters: a repair learned from one source failure becomes executable functionality available to multiple skills and unseen compositions.</p>
-          <span class="small-note">Adapted from the supplied manuscript.</span>
+          <p>Tools can lack a needed capability, report completion too early, or leave a state that the next skill cannot use.</p>
+          <p><strong>Recursia</strong> is a stack-aware, validation-gated framework for recursive self-improvement. Source-task failures guide a coding agent to generate missing tools or repair shared tools, skill contracts, handoffs, and verifiers. Candidates undergo generality checks, mechanism tests, and paired regression tests before acceptance.</p>
+          <p>The resulting stack is frozen and reused through declarative adapters, making a source-side repair available to multiple skills and unseen compositions. We study transfer from LIBERO-90 to LIBERO-Pro Long and preliminary physical composition on a Franka FR3.</p>
+          <span class="small-note">Adapted from the current draft manuscript.</span>
         </div>
       </div>
     </section>
 
     <section id="method" class="section-shell section-space">
       <div class="section-heading"><div><p class="section-index">02 / THE METHOD</p><h2>A repair that travels<br>with every composition.</h2></div><p>Experience is retained as shared executable functionality. Each accepted change becomes part of a versioned stack.</p></div>
-      <figure class="framework-figure"><button class="figure-button" type="button" aria-label="Expand Recursia framework figure"><img src="framework.webp" width="1513" height="693" loading="lazy" alt="Recursia framework: an executor diagnoses source failures, a proposer modifies the shared stack, and a verifier gates acceptance; the frozen stack is then composed on zero-shot target tasks."><span class="expand-hint" aria-hidden="true">View larger ↗</span></button><figcaption><span>Figure 1</span> Source failures guide shared-stack improvement; accepted versions are frozen for target execution.</figcaption></figure>
-      <div class="method-flow" aria-label="Improvement process"><div><span>01</span><h3>Execute & attribute</h3><p>Run a source task and identify the first supported execution failure.</p></div><div><span>02</span><h3>Propose a shared repair</h3><p>Add a missing tool or update a tool, skill contract, handoff, or verifier.</p></div><div><span>03</span><h3>Validate & retain</h3><p>Check generality, test the mechanism, and compare paired outcomes and regressions.</p></div><div><span>04</span><h3>Freeze & compose</h3><p>Reuse accepted code on unseen target compositions without persistent repair.</p></div></div>
-      <div class="principle"><span class="principle-symbol" aria-hidden="true">↔</span><p><strong>Completion is not readiness.</strong> A predecessor's achieved goal does not guarantee its successor's prerequisites. Recursia makes that boundary explicit.</p></div>
+      <figure class="paper-figure ">
+          <a class="figure-button" href="assets/figures/framework.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 1 · From source failures to frozen target execution" aria-label="View Figure 1: From source failures to frozen target execution at full size">
+            <img src="assets/figures/framework.webp" width="2400" height="1080" loading="lazy" decoding="async" alt="Recursia source-side improvement loop: execute and attribute a failure, propose a shared change, validate it, retain or reject it, then compose the frozen stack on target tasks.">
+            <span class="expand-hint" aria-hidden="true">View larger ↗</span>
+          </a>
+          <figcaption><span>Figure 1</span> Source-task failures drive repairs across tools, skills, handoffs, and verifiers. Candidates pass generality, mechanism, and paired regression checks before entering the shared stack; target execution uses the frozen stack.</figcaption>
+        </figure>
+      <div class="method-flow" aria-label="Improvement process">
+        <div><span>01</span><h3>Execute & attribute</h3><p>Run a source task and identify the first supported execution failure.</p></div>
+        <div><span>02</span><h3>Propose a shared change</h3><p>Generate a missing tool or repair a tool, skill contract, handoff, or verifier.</p></div>
+        <div><span>03</span><h3>Validate & retain</h3><p>Check generality and mechanism, then compare paired source outcomes and regressions. Retain or reject.</p></div>
+        <div><span>04</span><h3>Freeze & compose</h3><p>Reuse the accepted stack on unseen target compositions through declarative adapters.</p></div>
+      </div>
+      <p class="method-note">The proposer and evaluator have separate roles. Selection and hidden regression evidence are withheld from the proposer.</p>
+      <details class="paper-details">
+        <summary><span>Inside the four shared layers</span><span class="detail-meta">Interface examples · Figure 2</span></summary>
+        <div class="stack-detail-grid details-content">
+          <div class="layer-descriptions">
+            <h3>Explicit interfaces for composition</h3>
+            <dl>
+              <div><dt><i class="layer-dot blue" aria-hidden="true"></i>Tools</dt><dd>Reusable perception, geometry, planning, and execution operations with explicit inputs and completion signals.</dd></div>
+              <div><dt><i class="layer-dot green" aria-hidden="true"></i>Skills</dt><dd>Parameterized programs with observable prerequisites, completion evidence, and resource limits.</dd></div>
+              <div><dt><i class="layer-dot orange" aria-hidden="true"></i>Handoffs</dt><dd>Check what the next skill needs and whether earlier goals remain intact; re-observe, recover within budget, or stop.</dd></div>
+              <div><dt><i class="layer-dot purple" aria-hidden="true"></i>Verifiers</dt><dd>Use permitted observations and execution history to assess object identity and task relations.</dd></div>
+            </dl>
+            <p class="implementation-note">Contracts provide observable checks, not formal guarantees. In the documented implementation, placement verification runs as shadow monitoring; it does not gate execution or trigger corrections.</p>
+          </div>
+          <figure class="paper-figure portrait-figure">
+          <a class="figure-button" href="assets/figures/stack.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 2 · Shared executable interfaces" aria-label="View Figure 2: Shared executable interfaces at full size">
+            <img src="assets/figures/stack.webp" width="2400" height="3230" loading="lazy" decoding="async" alt="Four illustrated interfaces: observed motion termination, placement contracts, grasp-to-transport readiness, and cross-frame object identity.">
+            <span class="expand-hint" aria-hidden="true">View larger ↗</span>
+          </a>
+          <figcaption><span>Figure 2</span> Four interfaces in one shared executable stack: motion termination, placement contracts, grasp-to-transport handoffs, and cross-frame identity verification.</figcaption>
+        </figure>
+        </div>
+      </details>
+      <div class="principle"><span class="principle-symbol" aria-hidden="true">↔</span><p><strong>Completion is not readiness.</strong> A predecessor's achieved goal does not guarantee its successor's prerequisites.</p></div>
+    </section>
+
+    <section id="results" class="simulation-section section-space">
+      <div class="section-shell">
+        <div class="section-heading"><div><p class="section-index">03 / SIMULATION TRANSFER</p><h2>Improve on source tasks.<br>Compose on unseen targets.</h2></div><p>LIBERO-90 → LIBERO-Pro Long.<br>The shared stack is frozen before target execution.</p></div>
+        <div class="simulation-summary">
+          <div class="study-label"><span class="result-label">MANUSCRIPT-REPORTED RESULTS</span><p>Recursia target success</p></div>
+          <div class="simulation-metric"><strong>28.4<span>%</span></strong><span>Pos · object positions</span></div>
+          <div class="simulation-metric"><strong>53.3<span>%</span></strong><span>Task · task specifications</span></div>
+        </div>
+        <figure class="paper-figure ">
+          <a class="figure-button" href="assets/figures/zero-shot-transfer.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 3 · Zero-shot transfer to LIBERO-Pro Long" aria-label="View Figure 3: Zero-shot transfer to LIBERO-Pro Long at full size">
+            <img src="assets/figures/zero-shot-transfer.webp" width="2400" height="850" loading="lazy" decoding="async" alt="Bar charts of LIBERO-Pro Long success under position and task-specification perturbations. Recursia reaches 28.4 percent Pos and 53.3 percent Task in the current manuscript.">
+            <span class="expand-hint" aria-hidden="true">View larger ↗</span>
+          </a>
+          <figcaption><span>Figure 3</span> Frozen-stack transfer from LIBERO-90 to LIBERO-Pro Long, reported separately for changes in object positions (Pos) and task specifications (Task). Baselines are reproduced comparisons; execution policies and grasping backends differ.</figcaption>
+        </figure>
+        <p class="study-note">The current manuscript reports these aggregate rates; the final run configuration, per-task breakdown, and uncertainty estimates remain to be finalized.</p>
+        <details class="paper-details scaling-details">
+          <summary><span>How transfer changes with source experience</span><span class="detail-meta">Separate checkpoint study · Figure 7</span></summary>
+          <div class="details-content">
+            <figure class="paper-figure ">
+          <a class="figure-button" href="assets/figures/transfer-scaling.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 7 · Source experience and transfer" aria-label="View Figure 7: Source experience and transfer at full size">
+            <img src="assets/figures/transfer-scaling.webp" width="2400" height="1034" loading="lazy" decoding="async" alt="Success rates at source-improvement checkpoints from N equals 0 through N equals 18; the final shown checkpoint reaches 23.1 percent Pos and 43.4 percent Task.">
+            <span class="expand-hint" aria-hidden="true">View larger ↗</span>
+          </a>
+          <figcaption><span>Figure 7</span> Separately frozen stacks at successive source-improvement checkpoints. Transfer changes nonmonotonically as source experience accumulates; each checkpoint is evaluated without target-driven stack modification.</figcaption>
+        </figure>
+            <p class="study-note"><strong>N counts improvement iterations</strong>, with five source samples per iteration. The N=18 checkpoint reaches 23.1% Pos and 43.4% Task. This is a separate study; its endpoint is not the 28.4% / 53.3% primary configuration above.</p>
+          </div>
+        </details>
+      </div>
     </section>
 
     <section id="demos" class="demos-section section-space">
       <div class="section-shell">
-        <div class="section-heading"><div><p class="section-index">03 / TASK DEMONSTRATIONS</p><h2>Familiar skills.<br>New compositions.</h2></div><p>Three physical target tasks on a Franka FR3 with Franka Hand. Source knowledge stays frozen throughout evaluation.</p></div>
+        <div class="section-heading"><div><p class="section-index">04 / REAL-ROBOT DEMONSTRATIONS</p><h2>Familiar skills.<br>New compositions.</h2></div><p>Three physical target tasks on a Franka FR3 with Franka Hand. Source knowledge stays frozen throughout evaluation.</p></div>
         <div class="demo-grid">
           <article class="demo-card" data-task="task1">
             <div class="media-slot">
@@ -125,13 +196,71 @@
       </div>
     </section>
 
-    <section id="results" class="section-shell section-space results-section">
-      <div class="section-heading"><div><p class="section-index">04 / PRELIMINARY RESULTS</p><h2>From source experience<br>to physical composition.</h2></div><p>A first comparison with Skill Document Only (SD-only), which retains source experience in a natural-language skill document.</p></div>
-      <div class="results-grid"><div class="result-highlight"><span class="result-label">AVERAGE TARGET SUCCESS</span><div class="result-number">66.7<span>%</span></div><p>Recursia</p><div class="baseline-result">22.2% <span>SD-only</span></div><span class="small-note">3 tasks · 3 trials per task per method</span></div><div class="results-detail"><div class="table-scroll"><table><caption class="sr-only">Preliminary physical target-task success: three trials per task and method.</caption><thead><tr><th scope="col">Target task</th><th scope="col">SD-only</th><th scope="col">Recursia</th></tr></thead><tbody><tr><th scope="row">T1 · Shared basket</th><td>0.0%</td><td><strong>33.3%</strong></td></tr><tr><th scope="row">T2 · Reassigned plates</th><td>66.7%</td><td><strong>66.7%</strong></td></tr><tr><th scope="row">T3 · Bowl–mug dependency</th><td>0.0%</td><td><strong>100.0%</strong></td></tr><tr class="average-row"><th scope="row">Average</th><td>22.2%</td><td><strong>66.7%</strong></td></tr></tbody></table></div><p class="results-note">Preliminary results from Table 1 of the manuscript. Each target is evaluated three times per method, with success assessed manually. The small trial count limits broader conclusions; full benchmark results are pending.</p></div></div>
-      <div class="evaluation-strip"><span>EVALUATION SETTINGS</span><p>LIBERO-Pro Long <i></i> BEHAVIOR-1K <i></i> Franka FR3</p></div>
+    <section id="physical-results" class="section-shell section-space results-section">
+      <div class="section-heading"><div><p class="section-index">05 / PRELIMINARY PHYSICAL RESULTS</p><h2>From source experience<br>to physical composition.</h2></div><p>A first comparison with Skill Document Only (SD-only), which retains source experience in a natural-language skill document.</p></div>
+      <div class="results-grid"><div class="result-highlight"><span class="result-label">AVERAGE TARGET SUCCESS</span><div class="result-number">66.7<span>%</span></div><p>Recursia</p><div class="baseline-result">22.2% <span>SD-only</span></div><span class="small-note">3 tasks · 3 trials per task per method</span></div><div class="results-detail"><div class="table-scroll"><table><caption class="sr-only">Preliminary physical target-task success: three trials per task and method.</caption><thead><tr><th scope="col">Target task</th><th scope="col">SD-only</th><th scope="col">Recursia</th></tr></thead><tbody><tr><th scope="row">T1 · Shared basket</th><td>0.0%</td><td><strong>33.3%</strong></td></tr><tr><th scope="row">T2 · Reassigned plates</th><td>66.7%</td><td><strong>66.7%</strong></td></tr><tr><th scope="row">T3 · Bowl–mug dependency</th><td>0.0%</td><td><strong>100.0%</strong></td></tr><tr class="average-row"><th scope="row">Average</th><td>22.2%</td><td><strong>66.7%</strong></td></tr></tbody></table></div><p class="results-note">Preliminary physical target-task success on Franka FR3 with Franka Hand. Each method runs three trials per task; success is assessed manually. Source knowledge stays frozen, while within-trial feedback can change execution decisions. The selected demo videos are examples, not estimates of success rates.</p></div></div>
+      <div class="evaluation-strip"><span>EVALUATION SETTINGS</span><p>LIBERO-Pro Long <i></i> Franka FR3</p></div>
+    </section>
+
+    <section id="analysis" class="analysis-section section-space">
+      <div class="section-shell">
+        <div class="section-heading"><div><p class="section-index">06 / ANALYSIS</p><h2>What makes<br>composition difficult?</h2></div><p>Retrospective cases and a matched inference study examine readiness, validation, and execution on a frozen stack.</p></div>
+        <div class="analysis-grid">
+          <article class="analysis-card">
+            <p class="analysis-label">RETROSPECTIVE CASE EVIDENCE</p>
+            <h3>A completed goal can still lead to failure.</h3>
+            <p>At N=6, the first mug goal held in <strong>10/10</strong> recorded Pos episodes, but the full mug–pudding task succeeded in <strong>1/10</strong>. These are recorded cases, not a controlled ablation.</p>
+            <figure class="paper-figure ">
+          <a class="figure-button" href="assets/figures/compositional-reliability.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 4 · Compositional reliability" aria-label="View Figure 4: Compositional reliability at full size">
+            <img src="assets/figures/compositional-reliability.webp" width="2194" height="1954" loading="lazy" decoding="async" alt="Two recorded mug-pudding episodes at N equals 6: seed 42 finishes the mug goal but fails to bind the pudding; seed 41 finishes both goals from a different initial state.">
+            <span class="expand-hint" aria-hidden="true">View larger ↗</span>
+          </a>
+          <figcaption><span>Figure 4</span> Predecessor completion is not successor readiness. In ten recorded N=6 mug-pudding episodes, the mug goal held at termination in all ten, while the full conjunction succeeded once. The illustrated success and failure use different initial states.</figcaption>
+        </figure>
+          </article>
+          <article class="analysis-card">
+            <p class="analysis-label">SOURCE-SIDE VALIDATION CASES</p>
+            <h3>Local gains must survive paired checks.</h3>
+            <p>At N=9, corridor refusals fell from 8 to 2, but development success improved only from 0/10 to 1/10 and selection stayed at 0/10: the required gains were not met.</p>
+            <figure class="paper-figure ">
+          <a class="figure-button" href="assets/figures/validation-gates.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 6 · Why validation gates matter" aria-label="View Figure 6: Why validation gates matter at full size">
+            <img src="assets/figures/validation-gates.webp" width="2194" height="1684" loading="lazy" decoding="async" alt="Recorded source-side validation examples: a book-transfer repair, a corridor repair that fails required outcome gains, and paired basket-placement regressions hidden by aggregate scores.">
+            <span class="expand-hint" aria-hidden="true">View larger ↗</span>
+          </a>
+          <figcaption><span>Figure 6</span> A local mechanism repair need not improve full-task completion. Paired regression checks also expose lost successes that aggregate scores can hide.</figcaption>
+        </figure>
+            <p class="case-note">At N=11, selection improved from 7/50 to 11/50. Yet basket placement had two gains and two losses, exceeding the one-loss per-task cap; the candidate was rejected.</p>
+          </article>
+        </div>
+        <article class="inference-study">
+          <div class="subsection-heading"><div><p class="analysis-label">SAME FROZEN N=13 STACK</p><h3>How much should the driver decide online?</h3></div><p>Online decisions match one-shot Pos success and add two percentage points on Task, with higher mean episode time.</p></div>
+          <figure class="paper-figure ">
+          <a class="figure-button" href="assets/figures/inference-strategies.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 5 · Inference strategies on a frozen stack" aria-label="View Figure 5: Inference strategies on a frozen stack at full size">
+            <img src="assets/figures/inference-strategies.webp" width="2292" height="749" loading="lazy" decoding="async" alt="Comparison of rule-based, one-shot task-program, and online closed-loop drivers for success rate and mean episode duration on Pos and Task perturbations.">
+            <span class="expand-hint" aria-hidden="true">View larger ↗</span>
+          </a>
+          <figcaption><span>Figure 5</span> Inference drivers on the same frozen N=13 stack, with 50 matched episodes per perturbation axis. Mean episode times include program generation and robot execution, including failures and timeouts.</figcaption>
+        </figure>
+          <div class="table-scroll inference-table" tabindex="0" aria-label="Inference strategy results"><table>
+            <caption>50 matched episodes per perturbation axis · manuscript-reported results</caption>
+            <thead><tr><th scope="col">Inference driver</th><th scope="col">Pos success</th><th scope="col">Task success</th><th scope="col">Pos mean time</th><th scope="col">Task mean time</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Rule-based</th><td>12%</td><td>24%</td><td>5.28 min</td><td>5.20 min</td></tr>
+              <tr><th scope="row">One-shot task program</th><td>16%</td><td>30%</td><td>6.88 min</td><td>5.95 min</td></tr>
+              <tr><th scope="row">Online closed-loop</th><td>16%</td><td>32%</td><td>7.22 min</td><td>7.15 min</td></tr>
+            </tbody>
+          </table></div>
+          <p class="study-note">“One-shot” describes the lifetime of the task program. All three drivers may use observation feedback and closed-loop low-level control. Episode means include latency, failures, and timeouts.</p>
+        </article>
+      </div>
     </section>
   </main>
   <footer class="site-footer"><div class="section-shell footer-shell"><div><a class="brand" href="#">Recursia<span class="brand-dot">.</span></a><p>Learning to Compose</p></div><div><a href="https://github.com/cocacola-lab" target="_blank" rel="noopener noreferrer">CoLa Lab ↗</a><a href="#main">Back to top ↑</a></div></div></footer>
-  <dialog id="figure-dialog" aria-label="Recursia framework enlarged"><button class="dialog-close" type="button" aria-label="Close figure">Close ×</button><img src="framework.webp" alt="Enlarged Recursia framework overview."></dialog>
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title">
+    <div class="dialog-toolbar"><h2 id="figure-dialog-title">Paper figure</h2><button class="dialog-close" type="button" aria-label="Close figure" autofocus>Close ×</button></div>
+    <img class="dialog-image" alt="">
+    <p class="dialog-caption"></p>
+    <a class="dialog-original" target="_blank" rel="noopener noreferrer">Open full-size image ↗</a>
+  </dialog>
 </body>
 </html>

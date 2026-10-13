@@ -7,7 +7,25 @@ Research project website for **Recursive Self-Improvement of Shared Executable S
 - Robot implementation: https://github.com/cyzhuoda/recursia-fr3
 - Original page source: https://github.com/phosphene7/Recursia-Page
 
-This version is based on the supplied local website and adds three selected physical robot demonstrations. The repository contains the website, figures, downloadable paper, and selected media. It does not contain the robot implementation. Authors are left blank, as in the supplied page.
+This version follows the supplied updated manuscript (`Recursia/main.tex` and its 23-page `Recursia/build/main.pdf`) and includes three selected physical robot demonstrations. The repository contains the website, manuscript figures, downloadable paper, and selected media. The robot implementation is linked separately. Placeholder manuscript authors and affiliations are not copied onto the website.
+
+## Manuscript update
+
+The downloadable `Recursia.pdf` is an unchanged copy of the supplied current draft, SHA256 `9fb2542267d0e4c1979b3bc0bb164c514b5be3001d38972d021ea83bd556410c`. The draft still contains unfinished tables and editorial placeholders. The website uses the populated results and labels their status.
+
+| Paper figure | Website asset | Content |
+| --- | --- | --- |
+| 1 | `assets/figures/framework.webp` | Source improvement, validation, and frozen target execution |
+| 2 | `assets/figures/stack.webp` | Tools, skills, handoffs, and verifiers |
+| 3 | `assets/figures/zero-shot-transfer.webp` | Manuscript-reported LIBERO-Pro Long comparison |
+| 4 | `assets/figures/compositional-reliability.webp` | Predecessor completion versus successor readiness |
+| 5 | `assets/figures/inference-strategies.webp` | Three inference drivers on the frozen N=13 stack |
+| 6 | `assets/figures/validation-gates.webp` | Recorded mechanism and paired-regression cases |
+| 7 | `assets/figures/transfer-scaling.webp` | Separate source-improvement checkpoint study |
+
+Figures follow the files actually referenced by `main.tex`, including the newer PDF versions of the framework and stack diagrams. WebP conversion is lossless; PDF figures are rendered at 2400 px width. Source and published asset hashes are recorded in `assets/figures/manifest.json`. The title mark is also taken from the manuscript.
+
+The primary 28.4% Pos / 53.3% Task rates are manuscript-reported aggregates, with final run configuration, per-task results, and uncertainty still pending in the draft. They are separate from the N=18 scaling endpoint (23.1% / 43.4%). Baseline execution protocols and grasping backends differ. The website does not infer missing trial counts, publish blank ablations, or claim an independently verified benchmark. Hardware results remain preliminary: three tasks, three trials per task and method, manually scored.
 
 ## Selected robot demonstrations
 
@@ -28,9 +46,10 @@ Recorded motion segments were concatenated in order by the source export. Unreco
 - `styles.css` and `script.js`: responsive layout and player interactions.
 - `assets/videos/`: selected MP4 files and provenance manifest.
 - `assets/posters/`: video poster frames.
+- `assets/figures/`: current manuscript figures and source provenance.
 - `Recursia.pdf`: downloadable manuscript.
 
-The original video bundle, ZIP, local backups, and verification artifacts are ignored by Git and are not published.
+The original video bundle, manuscript source folder, ZIP files, local backups, and verification artifacts are ignored by Git and are not published. The supplied manuscript sources are preserved locally. The pre-update website is backed up in `local-backup-20261012/before-paper-refresh/`.
 
 ## GitHub Pages deployment
 
@@ -44,4 +63,4 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 Open http://127.0.0.1:8765/ . No build dependencies are required.
 
-Method figures, task descriptions, and preliminary results are preserved from the supplied manuscript and website. Laboratory: https://github.com/cocacola-lab . Original design inspiration: https://ganlin-yang.github.io/EventVLA.github.io/ .
+Laboratory: https://github.com/cocacola-lab . Original design inspiration: https://ganlin-yang.github.io/EventVLA.github.io/ .
