@@ -25,7 +25,7 @@ The downloadable `Recursia.pdf` is an unchanged copy of the supplied current dra
 
 Figures follow the files actually referenced by `main.tex`, including the newer PDF versions of the framework and stack diagrams. WebP conversion is lossless; PDF figures are rendered at 2400 px width. Source and published asset hashes are recorded in `assets/figures/manifest.json`. The title mark is also taken from the manuscript.
 
-The primary 28.4% Pos / 53.3% Task rates are manuscript-reported aggregates, with final run configuration, per-task results, and uncertainty still pending in the draft. They are separate from the N=18 scaling endpoint (23.1% / 43.4%). Baseline execution protocols and grasping backends differ. The website does not infer missing trial counts, publish blank ablations, or claim an independently verified benchmark. Hardware results remain preliminary: three tasks, three trials per task and method, manually scored.
+The primary 28.4% Pos / 53.3% Task rates are manuscript-reported aggregates, with final run configuration, per-task results, and uncertainty still pending in the draft. They are separate from the N=18 scaling endpoint (23.1% / 43.4%). Baseline execution protocols and grasping backends differ. The website does not infer missing trial counts, publish blank ablations, or claim an independently verified benchmark. Hardware results remain preliminary: three tasks, ten trials per task and method, manually scored. The updated website results supplied by the project authors are SD-only 0% / 80% / 0% and Recursia 20% / 80% / 100% for T1 / T2 / T3. Their unweighted task averages are 26.7% and 66.7%, respectively. This website update does not replace the downloadable manuscript PDF.
 
 ## Selected robot demonstrations
 
@@ -64,3 +64,4 @@ python3 -m http.server 8765 --bind 127.0.0.1
 Open http://127.0.0.1:8765/ . No build dependencies are required.
 
 Laboratory: https://github.com/cocacola-lab . Original design inspiration: https://ganlin-yang.github.io/EventVLA.github.io/ .
+
