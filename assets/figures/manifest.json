@@ -1,8 +1,8 @@
 {
   "manuscript": "Recursia/main.tex",
-  "paper_source": "Recursia/build/main.pdf",
+  "paper_source": "Recursia (2).pdf",
   "paper_asset": "Recursia.pdf",
-  "paper_sha256": "9fb2542267d0e4c1979b3bc0bb164c514b5be3001d38972d021ea83bd556410c",
+  "paper_sha256": "4b875eaccc04040420c90216d13c8a9e4d8e518af76c819b433b2e1f3449c59e",
   "figures": [
     {
       "figure": 4,
@@ -36,13 +36,23 @@
     },
     {
       "figure": 7,
-      "source": "Recursia/figures/recursia-transfer-scaling.pdf",
-      "source_sha256": "66cceb3326fb346ffce961cdbd3e37748dab39d307d2033d1a188618094a926e",
+      "source": "Recursia (2).pdf",
+      "source_sha256": "4b875eaccc04040420c90216d13c8a9e4d8e518af76c819b433b2e1f3449c59e",
       "asset": "assets/figures/transfer-scaling.webp",
-      "asset_sha256": "e7ff0143f0758da68948b9332614d154135b606fb39e4e2dff37bfbb40167b1a",
+      "asset_sha256": "4f3ae41b582e1b033eb44b76054fb2b11b5b4bf7e36c7e5264e0a9c0ecdb19ed",
       "width": 2400,
       "height": 1034,
-      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+      "conversion": "Original vector Form XObject rendered directly from the supplied PDF at 2400 px width on a white RGB background, without page headers or caption; lossless WebP, with decoded pixels verified identical to PNG preview.",
+      "pdf_page": 23,
+      "pdf_form_xobject": 238,
+      "pdf_form_name": "Im8",
+      "crop_bbox_pt": [
+        0,
+        0,
+        650,
+        280
+      ],
+      "crop_coordinate_system": "Original PDF Form XObject /BBox in points, bottom-left origin"
     },
     {
       "figure": 2,
@@ -76,13 +86,24 @@
     },
     {
       "figure": 3,
-      "source": "Recursia/figures/zero-shot-transfer.pdf",
-      "source_sha256": "fe8c2a463906bdd76db940c36b3cedb3d1cc86b076a180bf0057ba10ad67e160",
+      "source": "Recursia (2).pdf",
+      "source_sha256": "4b875eaccc04040420c90216d13c8a9e4d8e518af76c819b433b2e1f3449c59e",
       "asset": "assets/figures/zero-shot-transfer.webp",
-      "asset_sha256": "e3e124ca416062f3c60196660c4b200c6c510c8125f805f32b394349abae52a2",
+      "asset_sha256": "3e7b4111cbcb3fc79838f7e5c88ce9addec758aa49fa5d99c580209785c36a97",
       "width": 2400,
       "height": 850,
-      "conversion": "Lossless WebP from the manuscript-referenced source; PDF rendered at 2400 px width."
+      "conversion": "Original vector Form XObject rendered directly from the supplied PDF at 2400 px width on a white RGB background, without page headers or caption; lossless WebP, with decoded pixels verified identical to PNG preview.",
+      "pdf_page": 7,
+      "pdf_form_xobject": 195,
+      "pdf_form_name": "Im4",
+      "crop_bbox_pt": [
+        0,
+        0,
+        720,
+        255
+      ],
+      "crop_coordinate_system": "Original PDF Form XObject /BBox in points, bottom-left origin"
     }
-  ]
+  ],
+  "provenance_note": "The downloadable paper and Figures 3 and 7 are synchronized to Recursia (2).pdf. The manuscript field and all other figure entries retain the provenance of the prior Recursia/main.tex export; their source and source_sha256 values do not claim extraction from the new PDF."
 }

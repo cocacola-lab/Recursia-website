@@ -6,16 +6,35 @@
     catch { return null; }
   };
   const authorContainer = document.querySelector('#authors');
-  if (Array.isArray(config.authors) && config.authors.length) {
-    config.authors.forEach((author, index) => {
-      if (index) authorContainer.append(document.createTextNode(' · '));
+  if (authorContainer && Array.isArray(config.authors) && config.authors.length) {
+    authorContainer.replaceChildren();
+    config.authors.forEach(author => {
+      const item = document.createElement('li');
       const url = safeUrl(author.url);
-      const el = document.createElement(url ? 'a' : 'span');
-      el.textContent = author.name;
-      if (url) { el.href = url; el.target = '_blank'; el.rel = 'noopener noreferrer'; }
-      authorContainer.append(el);
+      const name = document.createElement(url ? 'a' : 'span');
+      name.textContent = author.name;
+      if (url) { name.href = url; name.target = '_blank'; name.rel = 'noopener noreferrer'; }
+      item.append(name);
+      if (Array.isArray(author.affiliations) && author.affiliations.length) {
+        const reference = document.createElement('sup');
+        reference.textContent = author.affiliations.join(',');
+        reference.setAttribute('aria-label', `Affiliation ${author.affiliations.join(', ')}`);
+        item.append(reference);
+      }
+      authorContainer.append(item);
     });
     authorContainer.hidden = false;
+  }
+  const affiliationContainer = document.querySelector('#affiliations');
+  if (affiliationContainer && Array.isArray(config.affiliations) && config.affiliations.length) {
+    affiliationContainer.replaceChildren();
+    config.affiliations.forEach(affiliation => {
+      const item = document.createElement('li');
+      const reference = document.createElement('sup');
+      reference.textContent = affiliation.id;
+      item.append(reference, document.createTextNode(affiliation.name));
+      affiliationContainer.append(item);
+    });
   }
   const codeUrl = safeUrl(config.codeUrl);
   if (codeUrl) { const link = document.querySelector('#code-link'); link.href = codeUrl; link.hidden = false; }

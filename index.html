@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f7f2">
   <meta name="description" content="Recursia improves a shared executable stack of tools, skills, handoffs, and verifiers for zero-shot long-horizon robot manipulation.">
+  <meta name="citation_title" content="Learning to Compose: Recursive Self-Improvement of Shared Executable Stacks for Zero-Shot Long-Horizon Robot Manipulation">
+  <meta name="citation_author" content="Yangzhi Chen">
+  <meta name="citation_author" content="Feiran Liu">
+  <meta name="citation_author" content="Zishuo Wang">
+  <meta name="citation_author" content="Zijian Jin">
+  <meta name="citation_author" content="Xin Zhu">
+  <meta name="citation_author" content="Lecheng Ruan">
+  <meta name="citation_author" content="Wenjuan Han">
+  <meta name="citation_pdf_url" content="https://cocacola-lab.github.io/Recursia-website/Recursia.pdf">
   <meta property="og:title" content="Recursia · Learning to Compose">
   <meta property="og:description" content="Recursive self-improvement of shared executable stacks for zero-shot long-horizon robot manipulation.">
   <meta property="og:type" content="website">
@@ -12,9 +21,9 @@
   <link rel="canonical" href="https://cocacola-lab.github.io/Recursia-website/">
   <title>Recursia · Learning to Compose</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=robot-arm">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="site-config.js"></script>
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="styles.css?v=20261013-paper">
+  <script defer src="site-config.js?v=20261013-paper"></script>
+  <script defer src="script.js?v=20261013-paper"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -34,14 +43,29 @@
       <div class="hero-title-lockup"><img class="hero-mark" src="assets/figures/title-robot-composition.webp" width="1254" height="1254" alt="Robot arm composing puzzle pieces"><h1 id="hero-title">Recursia<span>.</span></h1></div>
       <p class="hero-kicker">Learning to Compose</p>
       <h2 class="paper-title">Recursive Self-Improvement of Shared Executable Stacks<br class="desktop-break"> for Zero-Shot Long-Horizon Robot Manipulation</h2>
-      <div id="authors" class="authors" hidden></div>
+      <ul id="authors" class="authors" aria-label="Authors">
+        <li><span>Yangzhi Chen</span><sup aria-label="Affiliation 1">1</sup></li>
+        <li><span>Feiran Liu</span><sup aria-label="Affiliation 1">1</sup></li>
+        <li><span>Zishuo Wang</span><sup aria-label="Affiliation 1">1</sup></li>
+        <li><span>Zijian Jin</span><sup aria-label="Affiliation 2">2</sup></li>
+        <li><span>Xin Zhu</span><sup aria-label="Affiliation 3">3</sup></li>
+        <li><span>Lecheng Ruan</span><sup aria-label="Affiliation 4">4</sup></li>
+        <li><span>Wenjuan Han</span><sup aria-label="Affiliation 1, 5">1,5</sup></li>
+      </ul>
+      <ul id="affiliations" class="affiliations" aria-label="Author affiliations">
+        <li><sup>1</sup>Beijing Jiaotong University</li>
+        <li><sup>2</sup>New York University</li>
+        <li><sup>3</sup>University of Southern California</li>
+        <li><sup>4</sup>PKU-HEC joint lab for industrial intelligence, Peking University</li>
+        <li><sup>5</sup>LingXing Tech</li>
+      </ul>
       <a class="affiliation" href="https://github.com/cocacola-lab" target="_blank" rel="noopener noreferrer">CoLa Lab</a>
-      <p class="draft-label">Current draft manuscript</p>
+      <p class="draft-label">Updated manuscript</p>
       <p class="hero-description">Improve one shared executable stack. Validate each repair.<br>Reuse the frozen stack on unseen task compositions.</p>
       <div class="hero-actions">
         <a class="button primary" href="#demos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>Explore task demos</a>
-        <a class="button secondary" href="Recursia.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H5v18h14V8Z M14 3v5h5 M8 13h8 M8 17h6"/></svg>Draft paper PDF</a>
-        <a class="button secondary" href="Recursia.pdf" download="Recursia.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>Download PDF</a>
+        <a class="button secondary" href="Recursia.pdf?v=4b875eaccc04" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H5v18h14V8Z M14 3v5h5 M8 13h8 M8 17h6"/></svg>Paper PDF</a>
+        <a class="button secondary" href="Recursia.pdf?v=4b875eaccc04" download="Recursia.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>Download PDF</a>
         <a id="code-link" class="button secondary" href="https://github.com/cocacola-lab/Recursia" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="fill:currentColor;stroke:none"><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>GitHub</a>
       </div>
       <div class="hero-visual">
@@ -63,8 +87,8 @@
           <h3>Abstract</h3>
           <p>Tools can lack a needed capability, report completion too early, or leave a state that the next skill cannot use.</p>
           <p><strong>Recursia</strong> is a stack-aware, validation-gated framework for recursive self-improvement. Source-task failures guide a coding agent to generate missing tools or repair shared tools, skill contracts, handoffs, and verifiers. Candidates undergo generality checks, mechanism tests, and paired regression tests before acceptance.</p>
-          <p>The resulting stack is frozen and reused through declarative adapters, making a source-side repair available to multiple skills and unseen compositions. We study transfer from LIBERO-90 to LIBERO-Pro Long and preliminary physical composition on a Franka FR3.</p>
-          <span class="small-note">Adapted from the current draft manuscript.</span>
+          <p>The resulting stack is frozen and reused through declarative adapters, making a source-side repair available to multiple skills and unseen compositions. Experiments cover LIBERO-Pro Long simulation and a physical Franka FR3 with Franka Hand. The manuscript reports gains over ASPIRE of 5.8 percentage points on Pos and 15.1 points on Task, and a 40-point mean gain over Skill Document Only across three physical target tasks.</p>
+          <span class="small-note">Adapted from the updated manuscript.</span>
         </div>
       </div>
     </section>
@@ -116,27 +140,27 @@
         <div class="simulation-summary">
           <div class="study-label"><span class="result-label">MANUSCRIPT-REPORTED RESULTS</span><p>Recursia target success</p></div>
           <div class="simulation-metric"><strong>28.4<span>%</span></strong><span>Pos · object positions</span></div>
-          <div class="simulation-metric"><strong>53.3<span>%</span></strong><span>Task · task specifications</span></div>
+          <div class="simulation-metric"><strong>53.4<span>%</span></strong><span>Task · task specifications</span></div>
         </div>
         <figure class="paper-figure ">
-          <a class="figure-button" href="assets/figures/zero-shot-transfer.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 3 · Zero-shot transfer to LIBERO-Pro Long" aria-label="View Figure 3: Zero-shot transfer to LIBERO-Pro Long at full size">
-            <img src="assets/figures/zero-shot-transfer.webp" width="2400" height="850" loading="lazy" decoding="async" alt="Bar charts of LIBERO-Pro Long success under position and task-specification perturbations. Recursia reaches 28.4 percent Pos and 53.3 percent Task in the current manuscript.">
+          <a class="figure-button" href="assets/figures/zero-shot-transfer.webp?v=4b875eaccc04" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 3 · Zero-shot transfer to LIBERO-Pro Long" aria-label="View Figure 3: Zero-shot transfer to LIBERO-Pro Long at full size">
+            <img src="assets/figures/zero-shot-transfer.webp?v=4b875eaccc04" width="2400" height="850" loading="lazy" decoding="async" alt="Bar charts of LIBERO-Pro Long success under position and task-specification perturbations. Recursia reaches 28.4 percent Pos and 53.4 percent Task in the updated manuscript.">
             <span class="expand-hint" aria-hidden="true">View larger ↗</span>
           </a>
           <figcaption><span>Figure 3</span> Frozen-stack transfer from LIBERO-90 to LIBERO-Pro Long, reported separately for changes in object positions (Pos) and task specifications (Task). Baselines are reproduced comparisons; execution policies and grasping backends differ.</figcaption>
         </figure>
-        <p class="study-note">The current manuscript reports these aggregate rates; the final run configuration, per-task breakdown, and uncertainty estimates remain to be finalized.</p>
+        <p class="study-note">The manuscript evaluates 10 target tasks with 50 seeds each: 500 episodes per perturbation axis. Rates are task-macro averages. The supplied PDF does not include the referenced per-task tables or uncertainty estimates.</p>
         <details class="paper-details scaling-details">
           <summary><span>How transfer changes with source experience</span><span class="detail-meta">Separate checkpoint study · Figure 7</span></summary>
           <div class="details-content">
             <figure class="paper-figure ">
-          <a class="figure-button" href="assets/figures/transfer-scaling.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 7 · Source experience and transfer" aria-label="View Figure 7: Source experience and transfer at full size">
-            <img src="assets/figures/transfer-scaling.webp" width="2400" height="1034" loading="lazy" decoding="async" alt="Success rates at source-improvement checkpoints from N equals 0 through N equals 18; the final shown checkpoint reaches 23.1 percent Pos and 43.4 percent Task.">
+          <a class="figure-button" href="assets/figures/transfer-scaling.webp?v=4b875eaccc04" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 7 · Source experience and transfer" aria-label="View Figure 7: Source experience and transfer at full size">
+            <img src="assets/figures/transfer-scaling.webp?v=4b875eaccc04" width="2400" height="1034" loading="lazy" decoding="async" alt="Success rates at source-improvement checkpoints from N equals 0 through N equals 18; the final shown checkpoint reaches 23.2 percent Pos and 43.4 percent Task.">
             <span class="expand-hint" aria-hidden="true">View larger ↗</span>
           </a>
           <figcaption><span>Figure 7</span> Separately frozen stacks at successive source-improvement checkpoints. Transfer changes nonmonotonically as source experience accumulates; each checkpoint is evaluated without target-driven stack modification.</figcaption>
         </figure>
-            <p class="study-note"><strong>N counts improvement iterations</strong>, with five source samples per iteration. The N=18 checkpoint reaches 23.1% Pos and 43.4% Task. This is a separate study; its endpoint is not the 28.4% / 53.3% primary configuration above.</p>
+            <p class="study-note"><strong>N counts improvement iterations</strong>, with five source samples per iteration. The N=18 checkpoint reaches 23.2% Pos and 43.4% Task. This is a separate study; its endpoint is not the 28.4% / 53.4% primary configuration above.</p>
           </div>
         </details>
       </div>
@@ -198,7 +222,7 @@
 
     <section id="physical-results" class="section-shell section-space results-section">
       <div class="section-heading"><div><p class="section-index">05 / PRELIMINARY PHYSICAL RESULTS</p><h2>From source experience<br>to physical composition.</h2></div><p>A first comparison with Skill Document Only (SD-only), which retains source experience in a natural-language skill document.</p></div>
-      <div class="results-grid"><div class="result-highlight"><span class="result-label">AVERAGE TARGET SUCCESS</span><div class="result-number">66.7<span>%</span></div><p>Recursia</p><div class="baseline-result">26.7% <span>SD-only</span></div><span class="small-note">3 tasks · 10 trials per task per method</span></div><div class="results-detail"><div class="table-scroll"><table><caption class="sr-only">Updated preliminary physical target-task success: ten trials per task and method.</caption><thead><tr><th scope="col">Target task</th><th scope="col">SD-only</th><th scope="col">Recursia</th></tr></thead><tbody><tr><th scope="row">T1 · Shared basket</th><td>0.0%</td><td><strong>20.0%</strong></td></tr><tr><th scope="row">T2 · Reassigned plates</th><td>80.0%</td><td><strong>80.0%</strong></td></tr><tr><th scope="row">T3 · Bowl–mug dependency</th><td>0.0%</td><td><strong>100.0%</strong></td></tr><tr class="average-row"><th scope="row">Average</th><td>26.7%</td><td><strong>66.7%</strong></td></tr></tbody></table></div><p class="results-note">Updated preliminary physical target-task success on Franka FR3 with Franka Hand. Each method runs ten trials per task; success is assessed manually. Average is the mean across the three target tasks. Source knowledge stays frozen, while within-trial feedback can change execution decisions. The selected demo videos are examples, not estimates of success rates.</p></div></div>
+      <div class="results-grid"><div class="result-highlight"><span class="result-label">AVERAGE TARGET SUCCESS</span><div class="result-number">66.7<span>%</span></div><p>Recursia</p><div class="baseline-result">26.7% <span>SD-only</span></div><span class="small-note">3 tasks · 10 trials per task per method</span></div><div class="results-detail"><div class="table-scroll"><table><caption class="sr-only">Manuscript-reported preliminary physical target-task success: ten trials per task and method.</caption><thead><tr><th scope="col">Target task</th><th scope="col">SD-only</th><th scope="col">Recursia</th></tr></thead><tbody><tr><th scope="row">T1 · Shared basket</th><td>0.0%</td><td><strong>20.0%</strong></td></tr><tr><th scope="row">T2 · Reassigned plates</th><td>60.0%</td><td><strong>80.0%</strong></td></tr><tr><th scope="row">T3 · Bowl–mug dependency</th><td>20.0%</td><td><strong>100.0%</strong></td></tr><tr class="average-row"><th scope="row">Average</th><td>26.7%</td><td><strong>66.7%</strong></td></tr></tbody></table></div><p class="results-note">Manuscript-reported preliminary physical target-task success on Franka FR3 with Franka Hand (Table 1). Each method runs ten trials per task; success is assessed manually. Average is the mean across the three target tasks. Source knowledge stays frozen, while within-trial feedback can change execution decisions. The selected demo videos are examples, not estimates of success rates.</p></div></div>
       <div class="evaluation-strip"><span>EVALUATION SETTINGS</span><p>LIBERO-Pro Long <i></i> Franka FR3</p></div>
     </section>
 
@@ -209,7 +233,7 @@
           <article class="analysis-card">
             <p class="analysis-label">RETROSPECTIVE CASE EVIDENCE</p>
             <h3>A completed goal can still lead to failure.</h3>
-            <p>At N=6, the first mug goal held in <strong>10/10</strong> recorded Pos episodes, but the full mug–pudding task succeeded in <strong>1/10</strong>. These are recorded cases, not a controlled ablation.</p>
+            <p>At N=6, the first mug goal held in <strong>10/10</strong> recorded episodes, but the full mug–pudding task succeeded in <strong>1/10</strong>. These are recorded cases, not a controlled ablation.</p>
             <figure class="paper-figure ">
           <a class="figure-button" href="assets/figures/compositional-reliability.webp" target="_blank" rel="noopener noreferrer" data-figure-title="Figure 4 · Compositional reliability" aria-label="View Figure 4: Compositional reliability at full size">
             <img src="assets/figures/compositional-reliability.webp" width="2194" height="1954" loading="lazy" decoding="async" alt="Two recorded mug-pudding episodes at N equals 6: seed 42 finishes the mug goal but fails to bind the pudding; seed 41 finishes both goals from a different initial state.">
